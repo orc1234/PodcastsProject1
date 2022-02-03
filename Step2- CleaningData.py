@@ -1,5 +1,6 @@
 import pandas as pd
 from bs4 import BeautifulSoup
+from matplotlib import pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 
