@@ -8,7 +8,8 @@ warnings.filterwarnings("ignore")
 
 podcasts_df = pd.read_csv('copy_df_podcasts.csv', header=0, sep=',')
 podcasts_df2 = podcasts_df[podcasts_df['ListenScore']>=60]
-#language of podcast (sum for each podcast) - listen score (avg)
+
+#language of podcast (sum for each podcast) - listen score<=60 (avg)
 language_listen_score_df = podcasts_df2.groupby(['language']).mean()
 language_listen_score_df2=language_listen_score_df.filter(['language', 'ListenScore'])
 language_listen_score_df2["language"]=language_listen_score_df2.index
@@ -38,7 +39,7 @@ plt.title('writers LS avg')
 #plt.savefig('pie_chart_magnitude.png', transparent = True)
 plt.show()
 
-#countries (sum for each podcast) - listen score (avg)
+#countries (sum for each podcast) - listen score<=60 (avg)
 country_listen_score_df = podcasts_df2.groupby(['country']).mean()
 print(country_listen_score_df)
 country_listen_score_df2=country_listen_score_df.filter(['country', 'ListenScore'])
