@@ -1,15 +1,7 @@
-import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
-import matplotlib as mpl
-from matplotlib import pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
-import matplotlib_inline
-import time
-time.sleep(3)
-
-
 
 podcasts_df = pd.read_csv('podcasts.csv', header=0, sep=',')
 podcasts_df.info()
