@@ -1,21 +1,10 @@
-import numpy as np
 import pandas as pd
-from bs4 import BeautifulSoup
 import warnings
-import ast
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 warnings.filterwarnings("ignore")
-import time
-time.sleep(3)
 from sklearn.preprocessing import LabelEncoder
-
-
-
-
-
 
 
 podcasts_df = pd.read_csv('copy_df_podcasts.csv', header=0, sep=',')
