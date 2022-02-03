@@ -1,12 +1,9 @@
-import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import datetime
-import time
-time.sleep(3)
 
-# Crawling step 1 - Extract podcast data from https://www.listennotes.com/
+# Crawling step 1 - Extract podcasts data from https://www.listennotes.com/
 
 # This function gets a class page and return all podcasts links which located at this specific page.
 def insert_to_dict(podcasts_soup,podcast_dictionary):
@@ -86,6 +83,7 @@ def insert_to_dict(podcasts_soup,podcast_dictionary):
                 podcast_dictionary['podcast_name'].append(None)
                 podcast_dictionary['link'].append(None)
                 podcast_dictionary['writer'].append(None)
+                
 # This function creates a podcast list by month for 2019
 def create_podcast_list_by_month_2019(podcast_dictionary):
     for m in range(1, 13):
@@ -95,6 +93,7 @@ def create_podcast_list_by_month_2019(podcast_dictionary):
             response_podcasts = requests.get(podcasts_url)
             podcasts_soup_2019 = BeautifulSoup(response_podcasts.content, "html.parser")
             insert_to_dict(podcasts_soup_2019,podcast_dictionary)
+            
 # This function creates a podcast list by month for 2020
 def create_podcast_list_by_month_2020(podcast_dictionary):
     for m in range(1, 13):
@@ -104,6 +103,7 @@ def create_podcast_list_by_month_2020(podcast_dictionary):
             response_podcasts = requests.get(podcasts_url)
             podcasts_soup_2020 = BeautifulSoup(response_podcasts.content, "html.parser")
             insert_to_dict(podcasts_soup_2020,podcast_dictionary)
+            
 # This function creates a podcast list by month for 2021
 def create_podcast_list_by_month_2021(podcast_dictionary):
     for m in range(1, 13):
