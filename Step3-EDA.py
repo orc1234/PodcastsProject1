@@ -1,18 +1,12 @@
-import numpy as np
 import pandas as pd
-from bs4 import BeautifulSoup
-import matplotlib as mpl
 from matplotlib import pyplot as plt
 import seaborn as sns
-from seaborn import FacetGrid
 import warnings
 from collections import Counter
 import ast
 warnings.filterwarnings("ignore")
-import matplotlib_inline
 
-import time
-time.sleep(3)
+
 
 podcasts_df = pd.read_csv('copy_df_podcasts.csv', header=0, sep=',')
 
